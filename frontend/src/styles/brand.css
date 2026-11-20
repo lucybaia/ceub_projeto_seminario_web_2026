@@ -1,0 +1,24 @@
+/* Estilos e Utilitários de Marca Institucionais CEUB */
+
+/* Gradiente oficial de transição institucional */
+.ceub-gradient-primary {
+  background: linear-gradient(135deg, #43054e 0%, #662c92 100%);
+}
+
+.ceub-gradient-accent {
+  background: linear-gradient(135deg, #bf0087 0%, #ec0089 100%);
+}
+
+/* Efeito de haste vertical em bordas de cartões ou seções */
+.ceub-border-stem {
+  border-left: 4px solid var(--ceub-lilac);
+}
+
+.ceub-border-stem-magenta {
+  border-left: 4px solid var(--ceub-magenta);
+}
+
+/* Sombra e elevação institucional suave */
+.ceub-elevation {
+  box-shadow: 0 4px 20px -2px rgba(67, 5, 78, 0.08);
+}

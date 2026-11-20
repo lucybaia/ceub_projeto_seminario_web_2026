@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Design Tokens Institucionais CEUB */
+  --ceub-dark: #43054e;
+  --ceub-dark-rgb: 67, 5, 78;
+
+  --ceub-purple: #662c92;
+  --ceub-purple-rgb: 102, 44, 146;
+
+  --ceub-lilac: #bf0087;
+  --ceub-lilac-rgb: 191, 0, 135;
+
+  --ceub-magenta: #ec0089;
+  --ceub-magenta-rgb: 236, 0, 137;
+
+  --ceub-yellow: #fde100;
+  --ceub-yellow-rgb: 253, 225, 0;
+
+  /* Superfícies e Neutros */
+  --ceub-surface: #ffffff;
+  --ceub-surface-subtle: #f8f7fa;
+  --ceub-surface-muted: #e5e2ea;
+  --ceub-surface-dark: #1f1624;
+
+  /* Stack Tipográfica */
+  --ceub-font-family: 'dT Jakob', 'Plus Jakarta Sans', Montserrat, system-ui, sans-serif;
+}
+
+/* Fallback local para a fonte institucional dT Jakob se disponível */
+@font-face {
+  font-family: 'dT Jakob';
+  src: url('/src/assets/fonts/dt-jakob-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'dT Jakob';
+  src: url('/src/assets/fonts/dt-jakob-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-family: var(--ceub-font-family);
+    color: var(--ceub-dark);
+    background-color: var(--ceub-surface);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Hierarquia tipográfica com peso e personalidade geométrica */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: var(--ceub-dark);
+    letter-spacing: -0.02em;
+  }
+
+  /* Regra estrita de acessibilidade: nunca texto branco em amarelo */
+  .bg-ceub-yellow,
+  [data-ceub-accent="yellow"] {
+    color: #43054e !important;
+  }
+}
+
+@layer components {
+  /* Detalhe gráfico oficial: Haste vertical assimétrica do CEUB */
+  .ceub-stem-indicator {
+    position: relative;
+  }
+
+  .ceub-stem-indicator::before {
+    content: '';
+    position: absolute;
+    left: -0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 1.25rem;
+    background-color: var(--ceub-lilac);
+    border-radius: 1px;
+  }
+
+  /* Botão CTA de Alta Conversão com Magenta e Hover */
+  .ceub-btn-cta {
+    @apply inline-flex items-center justify-center font-semibold text-white px-5 py-2.5 rounded-ceub-md transition-all duration-200 shadow-sm active:scale-[0.98];
+    background-color: var(--ceub-magenta);
+  }
+  .ceub-btn-cta:hover {
+    background-color: #d1007a;
+    box-shadow: 0 4px 12px rgba(236, 0, 137, 0.3);
+  }
+
+  /* Card Institucional com borda sutil e fundo limpo */
+  .ceub-card {
+    @apply bg-white border border-ceub-surface-muted rounded-ceub-lg p-6 shadow-ceub-sm hover:shadow-ceub-md transition-shadow duration-200;
+  }
+}

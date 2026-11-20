@@ -1,0 +1,6 @@
+[
+  { "id": "cc", "name": "Ciência da Computação", "campus": "Asa Norte", "area": "Exatas e Tecnologia" },
+  { "id": "dir", "name": "Direito", "campus": "Asa Norte / Taguatinga", "area": "Humanas e Jurídicas" },
+  { "id": "med", "name": "Medicina", "campus": "Asa Norte", "area": "Saúde" },
+  { "id": "adm", "name": "Administração", "campus": "Taguatinga", "area": "Gestão e Negócios" }
+]
